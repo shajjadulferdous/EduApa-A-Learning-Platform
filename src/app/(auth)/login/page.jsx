@@ -41,7 +41,7 @@ const LoginPage = () => {
             });
             console.log(data)
      }
-     
+
     return (
         <div className='h-screen flex justify-center items-center flex-col'>
              <div>
@@ -50,9 +50,7 @@ const LoginPage = () => {
             <h1 className='font-semibold text-xl text-gray-600'>Sign in to EduApa</h1>
             <div>
                 <form onSubmit={handleSubmit(handleLogin , handleError)}>
-                    <fieldset className="fieldset rounded-box w-100 p-4">
-             
-
+                <fieldset className="fieldset rounded-box w-100 p-4">
                 <label className="label text-gray-600 font-semibold text-[16px]">Email</label>
                 <input type="email" {...register('email', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Email" />
 
