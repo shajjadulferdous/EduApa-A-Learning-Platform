@@ -1,13 +1,12 @@
 import React from 'react';
-import courses from "@/lib/data.json"
 import Image from 'next/image';
 import { IoStarHalf } from "react-icons/io5";
 import { PiStudentFill } from "react-icons/pi";
 import Link from 'next/link';
 
 const getCourses = async()=>{
-    //  const coursesP= await fetch('../lib/data.json');
-    //  const courses = await coursesP.json();
+     const coursesP= await fetch('https://eduapa.onrender.com/products');
+     const courses = await coursesP.json();
      return courses;
 }
 

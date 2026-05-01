@@ -5,8 +5,11 @@ import { FaBrain } from "react-icons/fa";
 import { PiChalkboardTeacherBold } from "react-icons/pi";
 
 const getTeacher = async ()=>{
-    return instructorsa;
+    const teachers = await fetch('https://eduapa.onrender.com/teacher');
+    const res = await teachers.json();
+    return res;
 }
+
 const OurInstructor = async() => {
     const instructors = await getTeacher();
     return (
