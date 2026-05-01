@@ -12,7 +12,6 @@ const getCourses = async()=>{
 
 const TopCourses =async () => {
     const courses = await getCourses();
-    console.log(courses)
     const topCourses = courses.sort((a,b)=>b.rating-a.rating).slice(0,3);
     return (
         <div className=''>

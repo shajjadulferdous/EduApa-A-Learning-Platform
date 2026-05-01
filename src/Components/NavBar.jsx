@@ -1,10 +1,16 @@
+'use client'
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaUserCircle } from "react-icons/fa";
 import eduapa from "@/asset/eduapa.png"
-
+import { authClient } from '@/lib/auth-client';
+import userAvatar from "@/asset/user.png"
 const NavBar = () => {
+    const { data: session } = authClient.useSession()
+    const user = session?.user;
+    // const {image} = user;
+    // console.log(image)
     const links =<>
        <li><Link href={'/'} className='font-semibold'>Home</Link></li>
        <li><Link href={'/courses'} className='font-semibold'>Courses</Link></li>
@@ -33,8 +39,16 @@ const NavBar = () => {
             </ul>
         </div>
         <div className="navbar-end gap-2">
-            <FaUserCircle className='w-8 h-8' />
-            <Link href={'/login'} className="btn rounded-full">Login</Link>
+            {user ? <div className="w-10 h-10 rounded-full overflow-hidden">
+            <Image
+                src={user.image || userAvatar}
+                alt="avatar"
+                width={40}
+                height={40}
+                className="object-cover w-full h-full"
+            />
+            </div>: <FaUserCircle className='w-8 h-8' />}
+            {user ? <button onClick={async ()=>{await authClient.signOut();}} className="btn rounded-full">Logout</button> : <Link href={'/login'} className="btn rounded-full">Login</Link> } 
         </div>
         </div>
     );
