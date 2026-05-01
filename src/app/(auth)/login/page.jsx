@@ -1,8 +1,41 @@
+'use client'
 import React from 'react';
 import logo from "@/asset/eduapa.png"
 import Image from 'next/image';
 import Link from 'next/link';
+import { useForm } from 'react-hook-form';
+import { authClient } from '@/lib/auth-client';
+import { toast } from 'react-toastify';
+import { redirect } from 'next/navigation';
+
 const LoginPage = () => {
+        const { register, handleSubmit, formState: { errors },} = useForm();
+        const handleLogin= async (e)=>{
+            const { data, error } = await authClient.signIn.email({
+                email: e.email, 
+                password: e.password,
+                rememberMe: true,
+                callbackURL: "/",
+            });
+            if (data){
+                 console.log(data);
+                 toast.success(`${data.user.name} is Sing In Successfully`)
+                 redirect('/');
+            }
+            if (error){
+                toast.error(error.message);
+            }
+    }
+    
+    const handleError = (errors)=>{
+            if (errors.email){
+                 toast.warning("Email Must Required");
+            }
+            else {
+                  toast.warning('Password Must Be given');
+            }
+        }
+
     return (
         <div className='h-screen flex justify-center items-center flex-col'>
              <div>
@@ -10,17 +43,19 @@ const LoginPage = () => {
              </div>
             <h1 className='font-semibold text-xl text-gray-600'>Sign in to EduApa</h1>
             <div>
-                <fieldset className="fieldset rounded-box w-100 p-4">
+                <form onSubmit={handleSubmit(handleLogin , handleError)}>
+                    <fieldset className="fieldset rounded-box w-100 p-4">
              
 
                 <label className="label text-gray-600 font-semibold text-[16px]">Email</label>
-                <input type="email" className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Email" />
+                <input type="email" {...register('email', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Email" />
 
                 <label className="label text-gray-600 font-semibold text-[16px]">Password</label>
-                <input type="password" className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Password" />
+                <input type="password" {...register('password', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Password" />
 
                 <button className="btn bg-green-900 text-white mt-4">Sign in</button>
                 </fieldset>
+                </form>
                 <p className='flex justify-center'>---------------or---------------</p>
                 <div className='flex justify-center mt-5'>
                     <button className="btn  text-black bg-base-200 w-100 border-[#e5e5e5]">

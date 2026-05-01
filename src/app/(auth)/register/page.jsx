@@ -1,8 +1,46 @@
+'use client'
 import React from 'react';
 import logo from "@/asset/eduapa.png"
 import Image from 'next/image';
-import Link from 'next/link';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+import { authClient } from '@/lib/auth-client';
+import { redirect } from 'next/navigation';
 const RegisterPage = () => {
+    const { register, handleSubmit, formState: { errors },} = useForm();
+   
+    const handleRegister= async (e)=>{
+         const { data, error } = await authClient.signUp.email({
+                name: e.name, 
+                email: e.email, 
+                password: e.password, 
+                image: e.image,
+                callbackURL: "/",
+            });
+        if (data){
+             console.log(data);
+             toast.success(`${data.user.name} is Registered Successfully`)
+             redirect('/');
+        }
+        if (error){
+            toast.error(error.message);
+        }
+    }
+
+    const handleErrors = (errors)=>{
+        if (errors.email){
+             toast.warning("Email Must Required");
+        }
+        else if (errors.name){
+             toast.warning("Name Must Required");
+        }
+        else if (errors.image){
+             toast.warning("Photo Must Required");
+        }
+        else {
+              toast.warning('Password Must Be given');
+        }
+    }
     return (
         <div className='h-screen flex justify-center items-center flex-col'>
              <div>
@@ -10,22 +48,24 @@ const RegisterPage = () => {
              </div>
             <h1 className='font-semibold text-xl text-gray-600'>Sign up for EduApa</h1>
             <div>
+                <form onSubmit={handleSubmit(handleRegister , handleErrors)}>
                 <fieldset className="fieldset rounded-box w-100 p-4">       
 
                 <label className="label text-gray-600 font-semibold text-[16px]">Email</label>
-                <input type="email" className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Email" />
+                <input type="email" {...register('email', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Email" />
               
                 <label className="label text-gray-600 font-semibold text-[16px]">Name</label>
-                <input type="text" className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Your Name" />
+                <input type="text" {...register('name', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Your Name" />
                  
                 <label className="label text-gray-600 font-semibold text-[16px]">Photo</label>
-                <input type="text" className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="URL" />
+                <input type="text" {...register('image', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="URL" />
 
                 <label className="label text-gray-600 font-semibold text-[16px]">Password</label>
-                <input type="password" className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Password" />
+                <input type="password" {...register('password', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Password" />
 
-                <button className="btn bg-green-900 text-white mt-4">Create Account</button>
+                <button type='submit' className="btn bg-green-900 text-white mt-4">Create Account</button>
                 </fieldset>
+                </form>
                 <p className='flex justify-center'>---------------or---------------</p>
                 <div className='flex justify-center mt-5'>
                     <button className="btn  text-black bg-base-200 w-100 border-[#e5e5e5]">

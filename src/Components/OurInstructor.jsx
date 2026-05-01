@@ -1,5 +1,4 @@
 import React from 'react';
-import instructorsa from "@/lib/teacher.json"
 import Image from 'next/image';
 import { FaBrain } from "react-icons/fa";
 import { PiChalkboardTeacherBold } from "react-icons/pi";
