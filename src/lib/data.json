@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch.",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "React JS Mastery",
+    "instructor": "Jane Smith",
+    "duration": "15 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Build modern web apps using React and hooks.",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+    "category": "Development"
+  },
+  {
+    "id": 3,
+    "title": "JavaScript Essentials",
+    "instructor": "Michael Brown",
+    "duration": "12 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Master the fundamentals of JavaScript programming.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "category": "Programming"
+  },
+  {
+    "id": 4,
+    "title": "Node.js & Express API Development",
+    "instructor": "Emily Davis",
+    "duration": "18 hours",
+    "rating": 4.8,
+    "level": "Intermediate",
+    "description": "Create RESTful APIs using Node.js and Express.",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    "category": "Backend"
+  },
+  {
+    "id": 5,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "Chris Wilson",
+    "duration": "10 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Learn the basics of user interface and experience design.",
+    "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698",
+    "category": "Design"
+  },
+  {
+    "id": 6,
+    "title": "MongoDB Database Course",
+    "instructor": "Sophia Martinez",
+    "duration": "14 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Understand NoSQL databases with MongoDB.",
+    "image": "https://images.unsplash.com/photo-1537432376769-00aabc2f0c3d",
+    "category": "Database"
+  },
+  {
+    "id": 7,
+    "title": "Next.js Full Guide",
+    "instructor": "David Lee",
+    "duration": "16 hours",
+    "rating": 4.8,
+    "level": "Advanced",
+    "description": "Build SEO-friendly web apps with Next.js.",
+    "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd",
+    "category": "Development"
+  },
+  {
+    "id": 8,
+    "title": "Python for Beginners",
+    "instructor": "Olivia Clark",
+    "duration": "11 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Start coding with Python from scratch.",
+    "image": "https://images.unsplash.com/photo-1526378722484-cc5c510f6d3b",
+    "category": "Programming"
+  },
+  {
+    "id": 9,
+    "title": "Git & GitHub Crash Course",
+    "instructor": "Daniel White",
+    "duration": "6 hours",
+    "rating": 4.9,
+    "level": "Beginner",
+    "description": "Learn version control using Git and GitHub.",
+    "image": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb",
+    "category": "Tools"
+  },
+  {
+    "id": 10,
+    "title": "Tailwind CSS Complete Course",
+    "instructor": "Emma Johnson",
+    "duration": "8 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Design modern websites using Tailwind CSS.",
+    "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d",
+    "category": "Design"
+  }
+]

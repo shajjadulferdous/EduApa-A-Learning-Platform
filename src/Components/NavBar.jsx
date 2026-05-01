@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { FaUserCircle } from "react-icons/fa";
+import eduapa from "@/asset/eduapa.png"
 
 const NavBar = () => {
     const links =<>
        <li><Link href={'/'} className='font-semibold'>Home</Link></li>
        <li><Link href={'/courses'} className='font-semibold'>Courses</Link></li>
+        <li><Link href={'/courses'} className='font-semibold'>My Profile</Link></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -20,8 +23,8 @@ const NavBar = () => {
                 {links}        
             </ul>
             </div>
-            <Link href={'/'} className='' >  
-                <Image className='' src={`/eduapa.png`} alt='logo' width={125} height={120}/>
+            <Link href={'/'} >  
+                <Image src={eduapa} alt='logo' width={110} height={110}/>
            </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -29,7 +32,8 @@ const NavBar = () => {
              {links}
             </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end gap-2">
+            <FaUserCircle className='w-8 h-8' />
             <Link href={'/login'} className="btn rounded-full">Login</Link>
         </div>
         </div>
