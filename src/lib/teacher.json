@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Sarah Ahmed",
+    "subject": "Computer Science",
+    "rating": 4.8,
+    "students": 1200,
+    "experience": "8 years",
+    "image": "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Mr. John Smith",
+    "subject": "Mathematics",
+    "rating": 4.6,
+    "students": 950,
+    "experience": "6 years",
+    "image": "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Ms. Ayesha Rahman",
+    "subject": "English Literature",
+    "rating": 4.9,
+    "students": 1500,
+    "experience": "10 years",
+    "image": "https://randomuser.me/api/portraits/women/68.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Dr. Michael Brown",
+    "subject": "Physics",
+    "rating": 4.7,
+    "students": 1100,
+    "experience": "9 years",
+    "image": "https://randomuser.me/api/portraits/men/45.jpg"
+  }
+]
