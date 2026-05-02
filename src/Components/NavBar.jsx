@@ -14,7 +14,7 @@ const NavBar = () => {
     const links =<>
        <li><Link href={'/'} className='font-semibold'>Home</Link></li>
        <li><Link href={'/courses'} className='font-semibold'>Courses</Link></li>
-        <li><Link href={'/courses'} className='font-semibold'>My Profile</Link></li>
+        <li><Link href={'/profile'} className='font-semibold'>My Profile</Link></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
