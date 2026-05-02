@@ -6,15 +6,17 @@ import { FaUserCircle } from "react-icons/fa";
 import eduapa from "@/asset/eduapa.png"
 import { authClient } from '@/lib/auth-client';
 import userAvatar from "@/asset/user.png"
+import { redirect, usePathname } from 'next/navigation';
+
 const NavBar = () => {
     const { data: session } = authClient.useSession()
     const user = session?.user;
-    // const {image} = user;
-    // console.log(image)
+    const pathName = usePathname();
+    console.log(pathName);
     const links =<>
-       <li><Link href={'/'} className='font-semibold'>Home</Link></li>
-       <li><Link href={'/courses'} className='font-semibold'>Courses</Link></li>
-        <li><Link href={'/profile'} className='font-semibold'>My Profile</Link></li>
+        <li><Link href={'/'} className={`${pathName === '/'? 'bg-orange-500 rounded-full btn text-white':''} font-semibold `}>Home</Link></li>
+        <li><Link href={'/courses'} className={`${pathName === '/courses'? 'bg-orange-500 rounded-full btn text-white':''} font-semibold `}>Courses</Link></li>
+        <li><Link href={'/profile'} className={`${pathName === '/profile'? 'bg-orange-500 rounded-full btn text-white':''} font-semibold `}>My Profile</Link></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -48,7 +50,7 @@ const NavBar = () => {
                 className="object-cover w-full h-full"
             />
             </div>: <FaUserCircle className='w-8 h-8' />}
-            {user ? <button onClick={async ()=>{await authClient.signOut();}} className="btn rounded-full">Logout</button> : <Link href={'/login'} className="btn rounded-full">Login</Link> } 
+            {user ? <button onClick={async ()=>{await authClient.signOut(); redirect('/')}} className="btn rounded-full">Logout</button> : <Link href={'/login'} className="btn rounded-full">Login</Link> } 
         </div>
         </div>
     );

@@ -54,19 +54,19 @@ const RegisterPage = () => {
             <h1 className='font-semibold text-xl text-gray-600'>Sign up for EduApa</h1>
             <div>
                 <form onSubmit={handleSubmit(handleRegister , handleErrors)}>
-                <fieldset className="fieldset rounded-box w-100 p-4">       
+                <fieldset className="fieldset rounded-box w-85 sm:w-100  p-4">       
 
                 <label className="label text-gray-600 font-semibold text-[16px]">Email</label>
-                <input type="email" {...register('email', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Email" />
+                <input type="email" {...register('email', { required: true })} className="input outline-none w-85 sm:w-100  hover:border-blue-500 hover:border-2" placeholder="Email" />
               
                 <label className="label text-gray-600 font-semibold text-[16px]">Name</label>
-                <input type="text" {...register('name', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Your Name" />
+                <input type="text" {...register('name', { required: true })} className="input outline-none w-85 sm:w-100  hover:border-blue-500 hover:border-2" placeholder="Your Name" />
                  
                 <label className="label text-gray-600 font-semibold text-[16px]">Photo</label>
-                <input type="text" {...register('image', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="URL" />
+                <input type="text" {...register('image', { required: true })} className="input outline-none w-85 sm:w-100  hover:border-blue-500 hover:border-2" placeholder="URL" />
 
                 <label className="label text-gray-600 font-semibold text-[16px]">Password</label>
-                <input type="password" {...register('password', { required: true })} className="input outline-none w-100 hover:border-blue-500 hover:border-2" placeholder="Password" />
+                <input type="password" {...register('password', { required: true })} className="input outline-none w-85 sm:w-100  hover:border-blue-500 hover:border-2" placeholder="Password" />
 
                 <button type='submit' className="btn bg-green-900 text-white mt-4">Create Account</button>
                 </fieldset>

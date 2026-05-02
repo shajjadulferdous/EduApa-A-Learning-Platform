@@ -14,9 +14,9 @@ const OurInstructor = async() => {
     return (
         <div className='my-10'>
             <h1 className='font-bold text-4xl text-center mb-10'>Our Instructor</h1>
-            <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto container gap-5 justify-around'>
+            <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto w-11/12 gap-5 justify-around'>
                 {
-                    instructors.map(instructor=><div key={instructor.id} className='p-5 shadow-md rounded-xl'>
+                    instructors.map(instructor=><div key={instructor.id} className='p-5 shadow-md rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl'>
                          <Image src={instructor.image} alt='teacherImage' width={280} height={280}></Image>
                          <h1 className='text-2xl font-bold'>{instructor.name}</h1>
                          <p className='text-[#808080] flex items-center gap-1'><FaBrain /> {instructor.experience}+ experience</p>

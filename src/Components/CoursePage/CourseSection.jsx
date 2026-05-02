@@ -15,17 +15,18 @@ const CourseSection =async () => {
     return (
         <div className='mt-10'>
             <h2 className='text-5xl font-bold text-center mb-10'>Our Courses</h2>
-            <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-3 container mx-auto'>
+            <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-3 w-11/12 mx-auto'>
                  {
                  courses.map((course, index)=> <div key={index} className='p-5 shadow-sm rounded-xl'>
-                    <div className='flex justify-center items-center'><Image src={course.image} className='rounded-sm' alt='course' width={400} height={300}></Image></div>
+                    <div className='flex justify-center items-center'><Image src={course.image} className='rounded-xl object-cover transition-all duration-500 
+             hover:scale-101 hover:shadow-xl hover:brightness-110' alt='course' width={400} height={300}></Image></div>
                     <h1 className='font-bold text-2xl mb-3'>{course.title}</h1>
                     {/* <hr /> */}
                     <div className='flex justify-between'>
                         <div className='flex justify-start flex-col'>
-                            <div className='flex items-center gap-1 font-bold'><PiStudentFill />
+                            <div className='flex items-center gap-1'><PiStudentFill />
                              Instrctor: {course.instructor}</div>
-                            <h1 className='flex items-center gap-1 font-bold'> <IoStarHalf /> Rating: {course.rating}</h1>
+                            <h1 className='flex items-center gap-1 '> <IoStarHalf /> Rating: {course.rating}</h1>
                         </div>
                         <div className='flex justify-end items-center '>
                             <span className='px-3 py-1 border-2 rounded-full'>{course.duration}</span>

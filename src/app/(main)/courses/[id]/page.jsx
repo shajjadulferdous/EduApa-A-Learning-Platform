@@ -6,6 +6,8 @@ import { FaRegStarHalfStroke } from "react-icons/fa6";
 import { TbCategory } from "react-icons/tb";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import Image from 'next/image';
+import { toast, ToastContainer } from 'react-toastify';
+import JoinButton from '@/Components/JoinButton';
 
 const getCourseDetails = async(id)=>{
       const res = await fetch(`https://eduapa.onrender.com/products/${id}`);
@@ -33,7 +35,7 @@ const CourseDetailsPage = async ({params}) => {
     "Final Project & Deployment"
   ];
     return (
-        <div className='mx-auto container my-30'>
+        <div className='mx-auto w-11/12 my-30'>
             <div className='flex justify-around  flex-col gap-5 md:flex-row'>
             <div className='space-y-3'>
                  <h1 className='font-extrabold text-4xl'>{title}</h1>
@@ -48,7 +50,7 @@ const CourseDetailsPage = async ({params}) => {
                     <p className='text-blue-500 py-1 px-2 bg-base-200 shadow-sm font-semibold '>Full Course Fee</p>
                  </div>
                  <div>
-                     <button className='btn bg-orange-500 text-white'>JOIN BATCH</button>
+                     <JoinButton></JoinButton>
                  </div>
             </div>
             <div>

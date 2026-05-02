@@ -3,7 +3,7 @@ import React from 'react';
 import sibling from "@/asset/04.png"
 const Banner = () => {
     return (
-        <div className='flex container mx-auto flex-col-reverse md:flex-row'>
+        <div className='flex w-11/12 mx-auto flex-col-reverse md:flex-row'>
             <div className='flex-1 flex justify-center items-center'>
                 <Image src={sibling} alt="an image" width={500} height={400} />
             </div>

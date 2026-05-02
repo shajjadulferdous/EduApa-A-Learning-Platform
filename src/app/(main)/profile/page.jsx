@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import userAvatar from '@/asset/user.png'
 import Link from 'next/link';
+import { redirect } from 'next/dist/server/api-utils';
 const ProfilePage = () => {
     const { data: session } = authClient.useSession()
     const user = session?.user;
@@ -25,7 +26,7 @@ const ProfilePage = () => {
             
               <div className='flex gap-5'>
                  <Link className='btn btn-neutral' href={'/updateProfile'}>Update Profile</Link>
-                 <Link href={'/'} className='btn' onClick={async()=>{await authClient.signOut();}}>Logout</Link>
+                 <Link href={'/'} className='btn' onClick={async()=>{await authClient.signOut(); redirect('/')}}>Logout</Link>
               </div>
            </div>
         </div>

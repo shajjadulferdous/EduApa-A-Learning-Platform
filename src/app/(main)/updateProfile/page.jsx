@@ -36,7 +36,7 @@ const UpdateProfilePage = () => {
                 <label className="label text-gray-600 font-semibold text-[16px]">Photo</label>
                 <input type="text" {...register('image', { required: true })} className="input outline-none w-85 hover:border-blue-500 hover:border-2" placeholder="URL" />
 
-                <button type='submit' className='btn mt-4'>Update</button>
+                <button type='submit' className='btn btn-neutral mt-4'>Update</button>
                 </fieldset>
                 </form>
             
