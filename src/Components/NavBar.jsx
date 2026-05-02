@@ -12,7 +12,7 @@ const NavBar = () => {
     const { data: session } = authClient.useSession()
     const user = session?.user;
     const pathName = usePathname();
-    console.log(pathName);
+    // console.log(pathName);
     const links =<>
         <li><Link href={'/'} className={`${pathName === '/'? 'bg-orange-500 rounded-full btn text-white':''} font-semibold `}>Home</Link></li>
         <li><Link href={'/courses'} className={`${pathName === '/courses'? 'bg-orange-500 rounded-full btn text-white':''} font-semibold `}>Courses</Link></li>
