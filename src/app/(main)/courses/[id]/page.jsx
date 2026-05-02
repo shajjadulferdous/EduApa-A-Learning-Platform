@@ -54,7 +54,8 @@ const CourseDetailsPage = async ({params}) => {
                  </div>
             </div>
             <div>
-                <Image src={image} alt={title} width={400} height={400} className='rounded-xl shadow-md'></Image>
+                <Image src={image} alt={title} width={400} height={400} className='rounded-xl shadow-md transition-all duration-500 
+                     hover:scale-101 hover:shadow-xl hover:brightness-110'></Image>
             </div>
            </div>
                    <div className="my-12 border-t"></div>

@@ -15,14 +15,14 @@ const TopCourses =async () => {
     const topCourses = courses.sort((a,b)=>b.rating-a.rating).slice(0,3);
     return (
         <div className=''>
-            <h2 className='text-5xl font-bold text-center mb-10'>Best Courses</h2>
+            <h2 className='text-5xl font-bold text-center mb-10'>🔥 Popular Courses</h2>
             <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-3  mx-auto'>
                  {
                  topCourses.map((course, index)=> <div key={index} className='p-5 shadow-sm rounded-xl'>
                     <div className='flex justify-center items-center'>
                         <Image src={course.image} 
                          className='rounded-xl object-cover transition-all duration-500 
-             hover:scale-101 hover:shadow-xl hover:brightness-110'
+                           hover:scale-101 hover:shadow-xl hover:brightness-110'
                          alt='course' width={400} height={300}></Image></div>
                     <h1 className='font-bold text-2xl mb-3'>{course.title}</h1>
                     {/* <hr /> */}

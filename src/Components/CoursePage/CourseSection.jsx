@@ -72,7 +72,7 @@ const CourseSection = () => {
             </div> : 
             <div className='flex justify-center items-center p-20 flex-col'>
                   <Image src={errorImg} alt='not found img' width={200} height={200}/> 
-                  <h1 className='font-bold text-4xl'>Sorry , No Reault Found</h1>
+                  <h1 className='font-bold text-4xl mt-2'>Sorry , No Reault Found</h1>
             </div>
            
            }
