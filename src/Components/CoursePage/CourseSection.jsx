@@ -33,13 +33,13 @@ const CourseSection = () => {
             10+ Courses Available
            </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight tracking-tight mb-2">
+            <h1 className="text-4xl text-center md:text-5xl font-bold text-slate-900 leading-tight tracking-tight mb-2">
                 Find Your Next{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-orange-600">
                 Dream Course
                 </span>
             </h1>
-             <p className="text-slate-500  mb-3">
+             <p className="text-slate-500 text-center  mb-3">
                 Search from Web Dev, Design, Marketing & more
             </p>
             <Search search={search} setSearchValue={setSearchValue}></Search>
@@ -70,7 +70,7 @@ const CourseSection = () => {
                 </div>)
             }
             </div> : 
-            <div className='flex justify-center items-center p-20'>
+            <div className='flex justify-center items-center p-20 flex-col'>
                   <Image src={errorImg} alt='not found img' width={200} height={200}/> 
                   <h1 className='font-bold text-4xl'>Sorry , No Reault Found</h1>
             </div>
