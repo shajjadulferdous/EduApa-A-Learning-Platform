@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import 'animate.css';
+.animate__animated.animate__bounce {
+  --animate-duration: 5s;
+}
