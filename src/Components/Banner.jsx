@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         <div className='flex w-11/12 mx-auto flex-col-reverse md:flex-row'>
             <div className='flex-1 flex justify-center items-center '>
-                <Image src={sibling} alt="an image" width={500} height={400} className='animate-[bounce_20s_ease-in-out_infinite]' />
+                <Image src={sibling} alt="an image" width={500} height={400} className='animate-[bounce_10s_ease-in-out_infinite]' />
             </div>
             <div className='flex-1 flex items-center justify-center mt-10 md:mt-0'>
                <div className=''>
