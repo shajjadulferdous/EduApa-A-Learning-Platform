@@ -57,7 +57,7 @@ const LoginPage = () => {
                 <label className="label text-gray-600 font-semibold text-[16px]">Password</label>
                 <input type="password" {...register('password', { required: true })} className="input outline-none w-85 sm:w-100  hover:border-blue-500 hover:border-2" placeholder="Password" />
 
-                <button className="btn bg-green-900 text-white mt-4">Sign in</button>
+                <button className="btn bg-orange-600 text-white mt-4">Sign in</button>
                 </fieldset>
                 </form>
                 <p className='flex justify-center'>---------------or---------------</p>

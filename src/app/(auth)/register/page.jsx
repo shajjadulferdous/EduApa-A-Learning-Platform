@@ -68,7 +68,7 @@ const RegisterPage = () => {
                 <label className="label text-gray-600 font-semibold text-[16px]">Password</label>
                 <input type="password" {...register('password', { required: true })} className="input outline-none w-85 sm:w-100  hover:border-blue-500 hover:border-2" placeholder="Password" />
 
-                <button type='submit' className="btn bg-green-900 text-white mt-4">Create Account</button>
+                <button type='submit' className="btn bg-orange-600 text-white mt-4">Create Account</button>
                 </fieldset>
                 </form>
                 <p className='flex justify-center'>---------------or---------------</p>
