@@ -9,7 +9,7 @@ import userAvatar from "@/asset/user.png"
 import { redirect, usePathname } from 'next/navigation';
 
 const NavBar = () => {
-    const { data: session } = authClient.useSession()
+    const { data: session , isPending } = authClient.useSession()
     const user = session?.user;
     const pathName = usePathname();
     const links =<>
@@ -39,8 +39,12 @@ const NavBar = () => {
              {links}
             </ul>
         </div>
-        <div className="navbar-end gap-2">
-            {user ? <div className="w-10 h-10 rounded-full overflow-hidden">
+       
+         { isPending ?<div className="navbar-end">
+            <div className='w-15'>
+                <span className="loading loading-spinner text-orange-500 loading-sm"></span></div>
+            </div>:  <>{user ?<div className="navbar-end gap-2"> 
+            <div className="w-10 h-10 rounded-full overflow-hidden">
             <Image
                 src={user.image || userAvatar}
                 alt="avatar"
@@ -48,9 +52,11 @@ const NavBar = () => {
                 height={40}
                 className="object-cover w-full h-full"
             />
-            </div>: <FaUserCircle className='w-8 h-8' />}
-            {user ? <button onClick={async ()=>{await authClient.signOut(); redirect('/')}} className="btn rounded-full">Logout</button> : <Link href={'/login'} className="btn rounded-full">Login</Link> } 
-        </div>
+            </div> <button onClick={async ()=>{await authClient.signOut(); redirect('/')}} className="btn rounded-full">Logout</button> </div> : <div className="navbar-end gap-2">
+                <FaUserCircle className='w-8 h-8' /> 
+                <Link href={'/login'} className="btn rounded-full">Login</Link></div>}
+                </>
+         }
         </div>
     );
 };

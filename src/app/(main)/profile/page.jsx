@@ -28,7 +28,7 @@ const ProfilePage = () => {
             
               <div className='flex gap-5'>
                  <Link className='btn btn-neutral' href={'/updateProfile'}>Update Profile</Link>
-                 <Link href={'/'} className='btn' onClick={async()=>{await authClient.signOut(); redirect('/')}}>Logout</Link>
+                 <Link href={'/'} className='btn' onClick={async()=>{await authClient.signOut(); }}>Logout</Link>
               </div>
            </div>
         </div>
