@@ -8,6 +8,8 @@ import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import Image from 'next/image';
 import { toast, ToastContainer } from 'react-toastify';
 import JoinButton from '@/Components/JoinButton';
+import Link from 'next/link';
+import NotFoundPage from '@/app/not-found';
 
 const getCourseDetails = async(id)=>{
       const res = await fetch(`https://eduapa.onrender.com/products/${id}`);
@@ -15,8 +17,10 @@ const getCourseDetails = async(id)=>{
       return course;
 }
 const CourseDetailsPage = async ({params}) => {
+    
     const {id} = await params;
     const {title , category , image, description , level , rating, duration , instructor } = await getCourseDetails(id);
+    console.log(title);
     console.log(title , category , image , description, level);
     const curriculum = [
     "Introduction to Web Development",
@@ -34,6 +38,11 @@ const CourseDetailsPage = async ({params}) => {
     "Authentication System",
     "Final Project & Deployment"
   ];
+  if (!title){
+        return <>
+            <NotFoundPage></NotFoundPage>
+        </>
+    }
     return (
         <div className='mx-auto w-11/12 mt-15'>
             <div className='flex justify-around  flex-col gap-5 md:flex-row'>
