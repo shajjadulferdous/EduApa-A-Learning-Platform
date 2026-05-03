@@ -17,7 +17,7 @@ const OurInstructor = async() => {
         <div className='my-20'>
              <p className='text-center text-slate-500 mb-1'>MEET THE TEAM</p>
             <h1 className='font-bold text-4xl text-center mb-10'>Learn from the <span className='text-orange-500'>best</span></h1>
-            <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto max-w-7xl w-11/13 gap-5 justify-around'>
+            <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto max-w-7xl w-11/13 grid-cols-1 gap-5 justify-around'>
                 {
                     instructors.map(instructor=><div key={instructor.id} className='p-5 shadow-md rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl'>
                          <div className="group relative aspect-4/3 w-full overflow-hidden rounded-2xl bg-slate-100 shadow-md transition-all duration-300 hover:shadow-xl">
