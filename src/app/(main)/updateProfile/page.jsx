@@ -27,7 +27,7 @@ const UpdateProfilePage = () => {
             isPending ?  <div className="flex justify-center items-center h-[50vh]">
             <span className="loading loading-spinner loading-lg text-orange-500"></span>
             </div> :<div className='flex justify-center items-center'>
-               <div className='flex justify-center items-center flex-col my-10 space-y-3 px-10 py-5 shadow-xl w-95'>
+               <div className='flex justify-center items-center flex-col my-10 space-y-3 px-10 py-5 shadow-sm w-95'>
                 <div className='w-50 h-50'>
                     <Image src={user?.image || userAvatar} alt='user image' width={200} height={200} className='w-full h-full rounded-full'></Image>
                 </div>
