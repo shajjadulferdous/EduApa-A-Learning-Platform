@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { FaBrain } from "react-icons/fa";
 import { PiChalkboardTeacherBold } from "react-icons/pi";
+import { FaBookOpen } from "react-icons/fa";
 
 const getTeacher = async ()=>{
     const teachers = await fetch('https://eduapa.onrender.com/teacher', {
@@ -28,11 +29,13 @@ const OurInstructor = async() => {
                                 fill 
                                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                             />
+                            
                             </div>
                          <h1 className='text-2xl mb-2'>{instructor.name}</h1>
                          <hr className='border-gray-100' />
                          <p className='text-[#808080] flex items-center gap-1 mt-2'><FaBrain /> {instructor.experience}+ experience</p>
                          <p className='text-[#808080] flex items-center gap-1'><PiChalkboardTeacherBold /> {instructor.students.toLocaleString()} + students taught</p>
+                         <p className='text-[#808080] flex items-center gap-1'> <FaBookOpen /> Expert in {instructor.subject}</p>
                     </div>)
                 }
             </div>
