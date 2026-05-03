@@ -31,7 +31,7 @@ const OurInstructor = async() => {
                             />
                             
                             </div>
-                         <h1 className='text-2xl mb-2'>{instructor.name}</h1>
+                         <h1 className='text-2xl my-2'>{instructor.name}</h1>
                          <hr className='border-gray-100' />
                          <p className='text-[#808080] flex items-center gap-1 mt-2'><FaBrain /> {instructor.experience}+ experience</p>
                          <p className='text-[#808080] flex items-center gap-1'><PiChalkboardTeacherBold /> {instructor.students.toLocaleString()} + students taught</p>
