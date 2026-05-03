@@ -14,7 +14,7 @@ const TopCourses =async () => {
     const courses = await getCourses();
     const topCourses = courses.sort((a,b)=>b.rating-a.rating).slice(0,3);
     return (
-        <div className=''>
+        <div className='mx-auto max-w-7xl w-11/13'>
             <h2 className='text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10'>🔥 Popular Courses</h2>
             <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-3  mx-auto'>
                  {

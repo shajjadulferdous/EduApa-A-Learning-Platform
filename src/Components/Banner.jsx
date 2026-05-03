@@ -3,7 +3,7 @@ import React from 'react';
 import sibling from "@/asset/04.png"
 const Banner = () => {
     return (
-        <div className='flex w-11/12 mx-auto flex-col-reverse md:flex-row'>
+        <div className='flex max-w-7xl w-11/13 mx-auto flex-col-reverse md:flex-row'>
             <div className='flex-1 flex justify-center items-center '>
                 <Image src={sibling} alt="an image" width={500} height={400} className='animate-[bounce_10s_ease-in-out_infinite]' />
             </div>
@@ -12,7 +12,7 @@ const Banner = () => {
                 {/* <h1 className='font-bold text-5xl text-center mb-3 '>Smart Preparation for Smart Students</h1> */}
                   <h1 className="text-4xl text-center md:text-5xl font-bold text-slate-900 leading-tight tracking-tight mb-2 animate__animated animate__bounce animate__delay-2s">
                     Smart Preparation for{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-orange-600">
+                    <span className="text-transparent bg-clip-text bg-linear-to-br from-orange-500 to-orange-600">
                     Smart Students
                     </span>
                 </h1>

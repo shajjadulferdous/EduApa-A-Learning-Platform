@@ -9,7 +9,7 @@ import { AiOutlineGlobal } from "react-icons/ai";
 const Footer = () => {
     return (
         <div className='mt-20'>
-             <div className='grid w-11/12 mx-auto sm:justify-between sm:grid-cols-2 gap-5 md:grid-cols-4'>
+             <div className='grid max-w-7xl w-11/13 mx-auto sm:justify-between sm:grid-cols-2 gap-5 md:grid-cols-4'>
                 <div className='space-y-1'>
                     <Image src={logo} alt='logo.png' width={150} height={150}></Image>
                      <p className='flex gap-1 items-center'><IoCallOutline className='text-orange-500' /> +8801815354111</p>

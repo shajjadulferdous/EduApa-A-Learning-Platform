@@ -8,7 +8,6 @@ import { authClient } from '@/lib/auth-client';
 import { redirect } from 'next/navigation';
 const RegisterPage = () => {
     const { register, handleSubmit, formState: { errors },} = useForm();
-   
     const handleRegister= async (e)=>{
          const { data, error } = await authClient.signUp.email({
                 name: e.name, 
@@ -30,7 +29,6 @@ const RegisterPage = () => {
         const data = await authClient.signIn.social({
             provider: "google",
         });
-        console.log(data)
     }
     const handleErrors = (errors)=>{
         if (errors.email){

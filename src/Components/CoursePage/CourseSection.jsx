@@ -25,8 +25,8 @@ const CourseSection = () => {
     const filterCourses = courses.filter(e => e.title.toLowerCase().includes(search.toLowerCase()))
 
     return (
-        <div className='w-11/12 mx-auto mt-10'>
-        <div className='flex justify-center items-center w-11/12 mx-auto flex-col'>
+        <div className='max-w-7xl w-11/13 mx-auto mt-10'>
+        <div className='flex justify-center items-center   flex-col'>
             <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 text-orange-700 text-xs font-medium rounded-full px-4 py-1.5 mb-4 tracking-wide">
             <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
             10+ Courses Available
@@ -48,13 +48,12 @@ const CourseSection = () => {
             <span className="loading loading-spinner loading-lg text-orange-500"></span>
             </div> :  <div className='mt-10'>
            {
-             filterCourses.length ? <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-3 w-11/12 mx-auto'>
+             filterCourses.length ? <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-3'>
                  {
                 filterCourses.map((course, index)=> <div key={index} className='p-5 shadow-sm rounded-xl'>
                     <div className='flex justify-center items-center'><Image src={course.image} className='rounded-xl object-cover transition-all duration-500 
                      hover:scale-101 hover:shadow-xl hover:brightness-110' alt='course' width={400} height={300}></Image></div>
                     <h1 className='font-bold text-2xl mb-3'>{course.title}</h1>
-                    {/* <hr /> */}
                     <div className='flex justify-between'>
                         <div className='flex justify-start flex-col'>
                             <div className='flex items-center gap-1'><PiStudentFill />

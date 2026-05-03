@@ -4,7 +4,7 @@ import CourseSection from '@/Components/CoursePage/CourseSection';
 const CouresPage = () => {
     
     return (
-        <div className='mx-auto w-11/12'>
+        <div className=''>
             <BannerPage></BannerPage>
             <CourseSection></CourseSection>
         </div>
