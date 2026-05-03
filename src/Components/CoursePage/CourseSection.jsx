@@ -34,7 +34,7 @@ const CourseSection = () => {
 
             <h1 className="text-4xl text-center md:text-5xl font-bold text-slate-900 leading-tight tracking-tight mb-2">
                 Find Your Next{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-orange-500 to-orange-600">
+                <span className="text-transparent bg-clip-text bg-linear-to-br from-orange-500 to-orange-600">
                 Dream Course
                 </span>
             </h1>
@@ -51,8 +51,11 @@ const CourseSection = () => {
              filterCourses.length ? <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-3'>
                  {
                 filterCourses.map((course, index)=> <div key={index} className='p-5 shadow-sm rounded-xl'>
-                    <div className='flex justify-center items-center'><Image src={course.image} className='rounded-xl object-cover transition-all duration-500 
-                     hover:scale-101 hover:shadow-xl hover:brightness-110' alt='course' width={400} height={300}></Image></div>
+                      <div className='relative rounded-2xl aspect-4/3 overflow-hidden hover:shadow-xl shadow flex justify-center items-center'>
+                        <Image src={course.image} 
+                            className=' object-cover transition-all duration-500 
+                            hover:scale-110  '
+                            alt='course' fill></Image></div>
                     <h1 className='font-bold text-2xl mb-3'>{course.title}</h1>
                     <div className='flex justify-between'>
                         <div className='flex justify-start flex-col'>

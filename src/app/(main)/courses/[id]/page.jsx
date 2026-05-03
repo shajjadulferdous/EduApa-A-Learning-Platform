@@ -35,9 +35,9 @@ const CourseDetailsPage = async ({params}) => {
     "Final Project & Deployment"
   ];
     return (
-        <div className='mx-auto w-11/12 my-30'>
+        <div className='mx-auto w-11/12 mt-15'>
             <div className='flex justify-around  flex-col gap-5 md:flex-row'>
-            <div className='space-y-3'>
+            <div className='space-y-3 flex-1'>
                  <h1 className='font-extrabold text-4xl'>{title}</h1>
                  <p className='text-xl'>{description}</p>
                  <p className='flex items-center gap-2'><GiTeacher /> Instructor: {instructor}</p>
@@ -53,12 +53,12 @@ const CourseDetailsPage = async ({params}) => {
                      <JoinButton></JoinButton>
                  </div>
             </div>
-            <div>
-                <Image src={image} alt={title} width={400} height={400} className='rounded-xl shadow-md transition-all duration-500 
-                     hover:scale-101 hover:shadow-xl hover:brightness-110'></Image>
+            <div className='relative aspect-3/2 overflow-hidden rounded-2xl shadow-md hover:shadow-2xl flex-1'>
+                <Image src={image} alt={title} fill  className=' shadow-md transition-all duration-500 
+                     hover:scale-110'></Image>
             </div>
            </div>
-                   <div className="my-12 border-t"></div>
+              <hr className='text-slate-200 mt-20 mb-10' />
 
       <div>
         <h2 className="text-3xl font-extrabold text-center mb-8">
