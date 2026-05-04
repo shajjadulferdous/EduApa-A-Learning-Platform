@@ -1,6 +1,7 @@
 import Banner from "@/Components/Banner";
 import ExtraSection from "@/Components/ExtraSection";
 import OurInstructor from "@/Components/OurInstructor";
+import TipSection from "@/Components/TipSection";
 import TopCourses from "@/Components/TopCourses";
 
 export const metadata = {
@@ -13,8 +14,9 @@ export default function Home() {
       <>
         <Banner></Banner>
         <TopCourses></TopCourses>
-        <ExtraSection></ExtraSection>
+        <TipSection></TipSection>
         <OurInstructor></OurInstructor>
+        <ExtraSection></ExtraSection>
       </>
   );
 }

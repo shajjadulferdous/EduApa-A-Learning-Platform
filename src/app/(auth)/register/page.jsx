@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { authClient } from '@/lib/auth-client';
 import { redirect } from 'next/navigation';
+import Link from 'next/link';
 const RegisterPage = () => {
     const { register, handleSubmit, formState: { errors },} = useForm();
     const handleRegister= async (e)=>{
@@ -19,7 +20,8 @@ const RegisterPage = () => {
         if (data){
              console.log(data);
              toast.success(`${data.user.name} is Registered Successfully`)
-             redirect('/');
+             await authClient.signOut();
+             redirect('/login');
         }
         if (error){
             toast.error(error.message);
@@ -76,6 +78,7 @@ const RegisterPage = () => {
                      Continue with Google
                     </button>
                 </div>
+                <p className='text-center mt-4'>Already Have an Account ? <Link href={'/login'} className='text-blue-500'>Go Login</Link></p>
             </div>
         </div>
     );
